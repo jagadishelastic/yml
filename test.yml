@@ -1,0 +1,12 @@
+- name: Hello World Sample
+  hosts: all
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
+    - name: "Copy a new ntp.conf file into place, backing up the original if it differs from the copied version"
+        copy:
+         src: ntpd.conf
+         dest: /home/centos/ntpd.conf
+         mode: 0644
+         backup: yes
